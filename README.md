@@ -8,7 +8,7 @@ docker build -t flask-app-with-docker .
 
 ## run  docker container
 ```
-docker run -e envvars.txt -p 5000:5000 flask-app-with-docker
+docker run --env-file envvars.txt -p 5000:5000 flask-app-with-docker
 ```
 environment variables are defined in envvars.txt as below
 ```
