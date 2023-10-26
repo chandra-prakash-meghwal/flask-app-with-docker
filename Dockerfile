@@ -1,5 +1,5 @@
 # Use the official Amazon Linux image as a parent image
-FROM public.ecr.aws/amazonlinux/amazonlinux:3
+FROM amazonlinux:2
 
 # Install system dependencies and development tools
 RUN yum update -y
