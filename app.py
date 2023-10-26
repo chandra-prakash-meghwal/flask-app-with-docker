@@ -5,7 +5,9 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Configure the database connection using environment variables
-app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://{os.environ['DB_USER']}:{os.environ['DB_PASSWORD']}@{os.environ['DB_HOST']}/{os.environ['DB_NAME']}"
+sqlalchemy_database_uri = f"mysql://{os.environ['DB_USER']}:{os.environ['DB_PASSWORD']}@{os.environ['DB_HOST']}/{os.environ['DB_NAME']}"
+print(f'sqlalchemy_database_uri {sqlalchemy_database_uri}')
+app.config['SQLALCHEMY_DATABASE_URI'] = sqlalchemy_database_uri
 db = SQLAlchemy(app)
 
 class User(db.Model):
